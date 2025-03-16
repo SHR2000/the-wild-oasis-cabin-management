@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-You can view the live version of the app here: [https://the-wild-oasis-cabin-management.vercel.app/]
+You can view the live version of the app here: [https://the-wild-oasis-cabin-management.vercel.app/demo]
 
 ## Data Re-upload and Sync
 

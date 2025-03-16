@@ -2,7 +2,7 @@ import { throwingErrorIfDemoAccount } from "../utils/helpers";
 import supabase, { supabaseUrl } from "./supabase";
 
 export async function signup({ email, password, fullName }) {
-  await throwingErrorIfDemoAccount("create new user");
+  await throwingErrorIfDemoAccount("create a new user");
 
   const { data, error } = await supabase.auth.signUp({
     email,

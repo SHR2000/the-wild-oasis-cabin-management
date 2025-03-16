@@ -1,5 +1,7 @@
 import { formatDistance, parseISO } from "date-fns";
 import { differenceInDays } from "date-fns";
+import { getCurrentUser } from "../services/apiAuth";
+import toast from "react-hot-toast";
 
 // We want to make this function work for both Date objects and strings (which come from Supabase)
 export const subtractDates = (dateStr1, dateStr2) =>
@@ -28,3 +30,14 @@ export const formatCurrency = (value) =>
   new Intl.NumberFormat("en", { style: "currency", currency: "USD" }).format(
     value
   );
+
+export async function throwingErrorIfDemoAccount(action) {
+  const currentUser = await getCurrentUser();
+
+  console.log(currentUser);
+
+  if (currentUser.email === "test@user.com") {
+    toast.error(`Test user is not authorized to ${action}`);
+    throw new Error(`Test user is not authorized to ${action}`);
+  }
+}

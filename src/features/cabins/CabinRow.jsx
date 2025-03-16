@@ -1,15 +1,14 @@
-import styled from "styled-components";
 import { HiOutlineSquare2Stack, HiPencil, HiTrash } from "react-icons/hi2";
+import styled from "styled-components";
 
-import Button from "../../ui/Button";
-import CreateCabinForm from "./CreateCabinForm";
-import { useDeleteCabin } from "./useDeleteCabin";
-import { formatCurrency } from "../../utils/helpers";
-import { useCreateCabin } from "./useCreateCabin";
-import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
-import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
+import Modal from "../../ui/Modal";
+import Table from "../../ui/Table";
+import { formatCurrency } from "../../utils/helpers";
+import CreateCabinForm from "./CreateCabinForm";
+import { useCreateCabin } from "./useCreateCabin";
+import { useDeleteCabin } from "./useDeleteCabin";
 
 // const TableRow = styled.div`
 //   display: grid;

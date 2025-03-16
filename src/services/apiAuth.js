@@ -52,6 +52,8 @@ export async function logout() {
 }
 
 export async function updateCurrentUser({ password, fullName, avatar }) {
+  await throwingErrorIfDemoAccount("update the account", false);
+
   // 1. Update password or fullName
   let updateData;
   if (password) updateData = { password };

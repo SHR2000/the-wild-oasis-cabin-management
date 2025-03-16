@@ -31,13 +31,12 @@ export const formatCurrency = (value) =>
     value
   );
 
-export async function throwingErrorIfDemoAccount(action) {
+export async function throwingErrorIfDemoAccount(action, showToast = true) {
   const currentUser = await getCurrentUser();
 
-  console.log(currentUser);
-
   if (currentUser.email === "test@user.com") {
-    toast.error(`Test user is not authorized to ${action}`);
+    if (showToast) toast.error(`Test user is not authorized to ${action}`);
+
     throw new Error(`Test user is not authorized to ${action}`);
   }
 }
